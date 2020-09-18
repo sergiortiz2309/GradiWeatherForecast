@@ -1,0 +1,63 @@
+<div class="container" style="background-color: #e3f2fd;">
+  <div class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
+    <div class="navbar-brand">
+      Welcome to Gradi Weather Forecast
+    </div>
+  </div>
+  <div class="card bg-dark text-white m-2">
+    <img src="../assets/img/city-4457801_1920.jpg" class="card-img-top" alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title">BOGOTÁ</h5>
+      <p class="card-text" >{{oneCallResponse.current.temp}} °C</p>     
+    </div>
+  </div>
+  <div class="row m-2">
+    <div class="col-lg-8">
+      <div class="card">     
+        <div class="card-body">
+          <h5 class="card-title m-3">3 days forecast</h5>        
+          <div class="card-deck">
+            <div class="card">
+              
+              <div class="card-body">
+                <h5 class="card-title">{{oneCallResponse.daily[0].dt.toString().split(' ')[0]}}</h5>
+                <img src="..." class="card-img-top" alt="...">
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Sunday</h5>
+               
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Sunday</h5>
+               
+                <p class="card-text "><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 ">
+      <div class="card bg-dark text-white">
+        <img src="../assets/img/tour-eiffel-5210486_640.jpg" class="card-img-top" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title">PARIS</h5>
+          <p class="card-text">Here goes the climate</p>     
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
