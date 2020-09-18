@@ -12,14 +12,18 @@ import { ConfigParameters } from '../confirgParameters';
 export class AppComponent {
 
   title = 'GradiWeatherForecast';
-  oneCallResponse: OneCallResponse;
+  oneCallResponse: OneCallResponse;  
 
   constructor(private httpClient: HttpClient) {
 
     this.getOneCallResponse()
         .subscribe(data => {
           this.oneCallResponse = data;
-          this.oneCallResponse.daily[0].dt = new Date (data.daily[0].dt);
+          this.oneCallResponse.current.dt = new Date (Number(data.current.dt) * 1000);
+          this.oneCallResponse.daily[1].dt = new Date (Number(data.daily[1].dt) * 1000);
+          this.oneCallResponse.daily[2].dt = new Date (Number(data.daily[2].dt) * 1000);
+          this.oneCallResponse.daily[3].dt = new Date (Number(data.daily[3].dt) * 1000); 
+          console.log(data.daily[1].weather);
         })
   }
 

@@ -6,10 +6,12 @@ export interface OneCallResponse {
   export interface Current {
     weather: Weather[];
     temp: number;
+    dt: Date;
   }
 
   export interface Weather {
     main: string;    
+    description: string;
   }
 
   export interface DailyData {

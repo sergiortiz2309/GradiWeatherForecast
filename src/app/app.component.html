@@ -7,8 +7,11 @@
   <div class="card bg-dark text-white m-2">
     <img src="../assets/img/city-4457801_1920.jpg" class="card-img-top" alt="...">
     <div class="card-img-overlay">
-      <h5 class="card-title">BOGOTÁ</h5>
-      <p class="card-text" >{{oneCallResponse.current.temp}} °C</p>     
+      <h3 class="card-title">BOGOTÁ</h3>
+      <img src="..." class="card-img-top" alt="...">
+      <h5 class="card-text">{{oneCallResponse.current.weather[0].description}}</h5>
+      <p class="card-text" >{{oneCallResponse.current.dt.toString().split(' ')[0]}}</p> 
+      <p class="card-text" >{{oneCallResponse.current.temp}} °C</p>  
     </div>
   </div>
   <div class="row m-2">
@@ -18,27 +21,33 @@
           <h5 class="card-title m-3">3 days forecast</h5>        
           <div class="card-deck">
             <div class="card">
-              
-              <div class="card-body">
-                <h5 class="card-title">{{oneCallResponse.daily[0].dt.toString().split(' ')[0]}}</h5>
+              <div class="card-header">
                 <img src="..." class="card-img-top" alt="...">
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>              
+              <div class="card-body">
+                <h4 class="card-title">{{oneCallResponse.daily[1].dt.toString().split(' ')[0]}}</h4>    
+                <h5 class="card-text">{{oneCallResponse.daily[1].weather[0].description}}</h5>           
+                <p class="card-text"><small class="text-muted">{{oneCallResponse.daily[1].temp.max}} / {{oneCallResponse.daily[1].temp.min}}</small></p>
               </div>
             </div>
             <div class="card">
-              <img src="..." class="card-img-top" alt="...">
+              <div class="card-header">
+                <img src="..." class="card-img-top" alt="...">
+              </div> 
               <div class="card-body">
-                <h5 class="card-title">Sunday</h5>
-               
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h4 class="card-title">{{oneCallResponse.daily[2].dt.toString().split(' ')[0]}}</h4>     
+                <h5 class="card-text">{{oneCallResponse.daily[2].weather[0].description}}</h5>            
+                <p class="card-text"><small class="text-muted">{{oneCallResponse.daily[2].temp.max}} / {{oneCallResponse.daily[2].temp.min}}</small></p>
               </div>
             </div>
             <div class="card">
-              <img src="..." class="card-img-top" alt="...">
+              <div class="card-header">
+                <img src="..." class="card-img-top" alt="...">
+              </div> 
               <div class="card-body">
-                <h5 class="card-title">Sunday</h5>
-               
-                <p class="card-text "><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h4 class="card-title">{{oneCallResponse.daily[3].dt.toString().split(' ')[0]}}</h4>   
+                <h5 class="card-text">{{oneCallResponse.daily[3].weather[0].description}}</h5>               
+                <p class="card-text "><small class="text-muted">{{oneCallResponse.daily[3].temp.max}} / {{oneCallResponse.daily[3].temp.min}}</small></p>
               </div>
             </div>
           </div>
