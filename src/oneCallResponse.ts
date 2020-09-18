@@ -12,6 +12,7 @@ export interface OneCallResponse {
   export interface Weather {
     main: string;    
     description: string;
+    iconUrl: string;
   }
 
   export interface DailyData {
