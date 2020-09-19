@@ -1,5 +1,5 @@
-<div style="background-image: url('../assets/img/background-1974516_1920.jpg'); background-size: cover;">  
-    <div class="navbar navbar-light navbar-expand-lg" style="background-color: #51f0a0;">
+<div class="background">  
+    <div class="navbar navbar-expand-lg navbarbackground">
       <div class="container">
         <div class="navbar-brand">
           Welcome to Gradi Weather Forecast
@@ -8,8 +8,8 @@
     </div> 
   <div class="container">    
     <div class="card ">
-      <div class="card bg-dark text-white m-2" style="max-height: 30rem; min-height: 15rem;">
-        <img src="../assets/img/city-4457801_1920.jpg" class="card-img-top" alt="..." style="max-height: inherit; min-height: inherit; background-repeat: no-repeat;"> 
+      <div class="card bg-dark text-white m-2 cardbogotacurrent">
+        <img src="../assets/img/city-4457801_1920.jpg" class="card-img-top backgroundcardbog" alt="..." > 
         <div class="card-img-overlay">
           <h3 class="card-title">BOGOTÁ</h3>
           <img src={{bogIconUrl}} style="width: 100px;" alt="...">
@@ -22,11 +22,11 @@
         <div class="col-lg-8">
           <div class="card text-center">     
             <div class="card-body">
-              <h5 class="card-title m-3">3 days forecast</h5>        
+              <h5 class="card-title m-2">3 days forecast</h5>        
               <div class="card-deck">
                 <div class="card">
                   <div class="card-header">
-                    <img src={{bogIcon1Url}} style="width: 80px;" class="card-img-top" alt="...">
+                    <img src={{bogIcon1Url}} class="card-img-top forecasticons" alt="...">
                   </div>              
                   <div class="card-body">
                     <h4 class="card-title">{{bogOneCallResponse.daily[1].dt.toString().split(' ')[0]}}</h4>    
@@ -36,7 +36,7 @@
                 </div>
                 <div class="card">
                   <div class="card-header">
-                    <img src={{bogIcon2Url}} style="width: 80px;" class="card-img-top" alt="...">
+                    <img src={{bogIcon2Url}} class="card-img-top forecasticons" alt="...">
                   </div> 
                   <div class="card-body">
                     <h4 class="card-title">{{bogOneCallResponse.daily[2].dt.toString().split(' ')[0]}}</h4>     
@@ -46,7 +46,7 @@
                 </div>
                 <div class="card">
                   <div class="card-header">
-                    <img src={{bogIcon3Url}} style="width: 80px;" class="card-img-top" alt="...">
+                    <img src={{bogIcon3Url}} class="card-img-top forecasticons" alt="...">
                   </div> 
                   <div class="card-body">
                     <h4 class="card-title">{{bogOneCallResponse.daily[3].dt.toString().split(' ')[0]}}</h4>   
@@ -61,8 +61,8 @@
         </div>
 
         <div class="col-lg-4 ">
-          <div class="card bg-dark text-white" style="max-height: 25rem; min-height: 18rem">
-            <img src="../assets/img/paris-1789706_1920.jpg" class="card-img-top" alt="..." style="max-height: inherit; min-height: inherit; background-repeat: absolute;">
+          <div class="card bg-dark text-white cardpariscurrent" >
+            <img src="../assets/img/paris-1789706_1920.jpg" class="card-img-top backgroundcardparis" alt="...">
             <div class="card-img-overlay">
               <h5 class="card-title">PARIS</h5>
               <img src={{parisIconUrl}} style="width: 100px;" alt="...">
