@@ -1,57 +1,63 @@
 <div class="background">  
     <div class="navbar navbar-expand-lg navbarbackground">
       <div class="container">
-        <div class="navbar-brand">
-          Welcome to Gradi Weather Forecast
+        <div class="navbar-brand text-white ">
+          <h3><b>Welcome to Gradi Weather Forecast</b></h3>
         </div>
       </div>
     </div> 
   <div class="container">    
     <div class="card ">
-      <div class="card bg-dark text-white m-2 cardbogotacurrent">
+      <div class="card bg-dark text-black mr-4 ml-4 mt-2 mb-2 cardbogotacurrent">
         <img src="../assets/img/city-4457801_1920.jpg" class="card-img-top backgroundcardbog" alt="..." > 
         <div class="card-img-overlay">
-          <h3 class="card-title">BOGOTÁ</h3>
-          <img src={{bogIconUrl}} style="width: 100px;" alt="...">
-          <h5 class="card-text">{{bogOneCallResponse.current.weather[0].description.toUpperCase()}}</h5>
-          <p class="card-text" >{{bogOneCallResponse.current.dt.toString().split(' ')[0]}}</p> 
-          <p class="card-text" >{{bogOneCallResponse.current.temp}} °C</p>  
+          <div class="row">
+            <div class="col-md-6">
+              <div class="p-3" style="background: rgb(255, 255, 255, 0.6);">
+                <h3 class="card-title"><b>BOGOTÁ</b></h3>     
+                <div class="row">            
+                  <div class="col-6">                  
+                    <img src={{bogIconUrl}} alt="..." class="bigIcons">
+                    <h5 class="card-text"><b>{{bogOneCallResponse.current.weather[0].description.toUpperCase()}}</b></h5>
+                  </div>
+                  <div class="col-6">         
+                    <h1 class="card-text" >{{bogOneCallResponse.current.dt.toString().split(' ')[0]}}</h1> 
+                    <h1 class="card-text" >{{bogOneCallResponse.current.temp}} °C</h1> 
+                  </div>     
+                </div> 
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row m-2">
         <div class="col-lg-8">
           <div class="card text-center">     
             <div class="card-body">
-              <h5 class="card-title m-2">3 days forecast</h5>        
+              <h2 class="card-title pb-2">3 Days Forecast</h2>        
               <div class="card-deck">
-                <div class="card">
-                  <div class="card-header">
+                <div class="card">                               
+                  <div class="card-body">
                     <img src={{bogIcon1Url}} class="card-img-top forecasticons" alt="...">
-                  </div>              
-                  <div class="card-body">
                     <h4 class="card-title">{{bogOneCallResponse.daily[1].dt.toString().split(' ')[0]}}</h4>    
-                    <h5 class="card-text">{{bogOneCallResponse.daily[1].weather[0].description.toUpperCase()}}</h5>           
-                    <p class="card-text"><small class="text-muted">{{bogOneCallResponse.daily[1].temp.max}} / {{bogOneCallResponse.daily[1].temp.min}}</small></p>
+                    <h5 class="card-text pcapitalized">{{bogOneCallResponse.daily[1].weather[0].description}}</h5>           
+                    <p class="card-text">{{bogOneCallResponse.daily[1].temp.max | number: '1.0-0' }} / {{bogOneCallResponse.daily[1].temp.min | number: '1.0-0'}}</p>
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-header">
+                <div class="card">                  
+                  <div class="card-body">
                     <img src={{bogIcon2Url}} class="card-img-top forecasticons" alt="...">
-                  </div> 
-                  <div class="card-body">
                     <h4 class="card-title">{{bogOneCallResponse.daily[2].dt.toString().split(' ')[0]}}</h4>     
-                    <h5 class="card-text">{{bogOneCallResponse.daily[2].weather[0].description.toUpperCase()}}</h5>            
-                    <p class="card-text"><small class="text-muted">{{bogOneCallResponse.daily[2].temp.max}} / {{bogOneCallResponse.daily[2].temp.min}}</small></p>
+                    <h5 class="card-text pcapitalized">{{bogOneCallResponse.daily[2].weather[0].description}}</h5>            
+                    <p class="card-text">{{bogOneCallResponse.daily[2].temp.max | number: '1.0-0'}} / {{bogOneCallResponse.daily[2].temp.min | number: '1.0-0' }}</p>
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-header">
-                    <img src={{bogIcon3Url}} class="card-img-top forecasticons" alt="...">
-                  </div> 
+                <div class="card">                 
                   <div class="card-body">
+                    <img src={{bogIcon3Url}} class="card-img-top forecasticons" alt="...">
                     <h4 class="card-title">{{bogOneCallResponse.daily[3].dt.toString().split(' ')[0]}}</h4>   
-                    <h5 class="card-text">{{bogOneCallResponse.daily[3].weather[0].description.toUpperCase()}}</h5>               
-                    <p class="card-text "><small class="text-muted">{{bogOneCallResponse.daily[3].temp.max}} / {{bogOneCallResponse.daily[3].temp.min}}</small></p>
+                    <h5 class="card-text pcapitalized">{{bogOneCallResponse.daily[3].weather[0].description}}</h5>               
+                    <p class="card-text ">{{bogOneCallResponse.daily[3].temp.max | number: '1.0-0'}} / {{bogOneCallResponse.daily[3].temp.min | number: '1.0-0'}}</p>
                   </div>
                 </div>
               </div>
@@ -60,15 +66,27 @@
           </div>
         </div>
 
-        <div class="col-lg-4 ">
-          <div class="card bg-dark text-white cardpariscurrent" >
+        <div class="col-lg-4">
+          <div class="card bg-dark text-black cardpariscurrent">
             <img src="../assets/img/paris-1789706_1920.jpg" class="card-img-top backgroundcardparis" alt="...">
             <div class="card-img-overlay">
-              <h5 class="card-title">PARIS</h5>
-              <img src={{parisIconUrl}} style="width: 100px;" alt="...">
-              <h5 class="card-text">{{parisOneCallResponse.current.weather[0].description.toUpperCase()}}</h5>
-              <p class="card-text" >{{parisOneCallResponse.current.dt.toString().split(' ')[0]}}</p> 
-              <p class="card-text" >{{parisOneCallResponse.current.temp}} °C</p>  
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="p-2" style="background: rgb(255, 255, 255, 0.6);">
+                    <h3 class="card-title"><b>PARIS</b></h3>
+                    <div class="row">            
+                      <div class="col-6">                  
+                        <img src={{parisIconUrl}} class="bigIcons" alt="...">                        
+                      </div>
+                      <div class="col-6 ">         
+                        <h2 class="card-text" >{{parisOneCallResponse.current.dt.toString().split(' ')[0]}}</h2> 
+                        <h3 class="card-text" >{{parisOneCallResponse.current.temp | number: '1.0-0'}} °C</h3>  
+                      </div>     
+                    </div> 
+                    <h5 class="card-text text-center"><b>{{parisOneCallResponse.current.weather[0].description.toUpperCase()}}</b></h5> 
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
